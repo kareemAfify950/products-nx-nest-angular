@@ -1,0 +1,8 @@
+.spacer {
+    flex: 1 1 auto;
+  }
+  
+  mat-tab-group {
+    margin-left: auto; /* Pushes tabs to the right */
+  }
+  

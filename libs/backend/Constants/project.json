@@ -1,0 +1,19 @@
+{
+  "name": "Constants",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/backend/Constants/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/backend/Constants",
+        "main": "libs/backend/Constants/src/index.ts",
+        "tsConfig": "libs/backend/Constants/tsconfig.lib.json",
+        "assets": ["libs/backend/Constants/*.md"]
+      }
+    }
+  },
+  "tags": []
+}

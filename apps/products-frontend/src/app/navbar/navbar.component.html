@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+    <span>My App</span>
+    <span class="spacer"></span>
+    <div *ngIf="accessToken">
+      <a mat-button [routerLink]="['/products']">Products</a>
+      <a mat-button [routerLink]="['/cart']">cart</a>
+      <a mat-button (click)="logout()">Logout</a>
+    </div>
+   
+  </mat-toolbar>
+  

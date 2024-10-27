@@ -1,0 +1,42 @@
+<div class="center-container">
+  <mat-card>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <mat-card-header>
+        <h2>Login</h2>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" required />
+          <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+            Email is required.
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('email')?.hasError('email')">
+            Invalid email format.
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" required />
+          <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+            Password is required.
+          </mat-error>
+        </mat-form-field>
+
+        <div *ngIf="error$ | async as errorMessage" class="error-message">
+          {{ errorMessage }}
+        </div>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit" [disabled]="loading">
+          Login
+        </button>
+        <a mat-button [routerLink]="['/register']">I don't have account</a>
+
+        <mat-spinner *ngIf="loading" diameter="20"></mat-spinner>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>

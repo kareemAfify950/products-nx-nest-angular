@@ -1,0 +1,23 @@
+
+<h1 class="text-center">Cart</h1>
+
+<div class="product-spinner">
+  <mat-spinner *ngIf="isLoading" class="spinner"></mat-spinner>
+
+</div>
+
+<!-- <div class="product-grid" *ngIf="!isLoading"> -->
+  <mat-card *ngFor="let item of (cartItems$ | async).items" class="product-card">
+    <mat-card-header>
+      <mat-card-title>hey: {{ item.productId.name }}</mat-card-title>
+      <mat-card-subtitle>Date: {{ item.date | date }}</mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+
+  <ng-container *ngIf="!(cartItems$ | async).items?.length">
+    <mat-card>
+      <mat-card-content>
+        <p>No products available.</p>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>

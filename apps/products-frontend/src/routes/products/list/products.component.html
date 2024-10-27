@@ -1,0 +1,28 @@
+<h1 class="text-center">Product List</h1>
+
+<div class="product-spinner">
+  <mat-spinner *ngIf="isLoading" class="spinner"></mat-spinner>
+
+</div>
+
+<div class="product-grid" *ngIf="!isLoading">
+  <mat-card *ngFor="let product of (products$ | async)?.products" class="product-card">
+    <mat-card-header>
+      <mat-card-title>{{ product.name }}</mat-card-title>
+      <mat-card-subtitle>Remaining: {{ product.remaining }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="addToCart(product._id)">
+        Buy
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+  <ng-container *ngIf="!(products$ | async)?.products?.length">
+    <mat-card>
+      <mat-card-content>
+        <p>No products available.</p>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+</div>

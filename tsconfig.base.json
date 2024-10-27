@@ -1,0 +1,29 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@products-space/Constants": ["libs/backend/Constants/src/index.ts"],
+      "@products-space/MQ": ["libs/backend/MQ/src/index.ts"],
+      "@products-space/Schema": ["libs/backend/Schema/src/index.ts"],
+      "@products-space/auth": ["libs/backend/auth/src/index.ts"],
+      "@products-space/auth-jwt": ["libs/backend/auth-jwt/src/index.ts"],
+      "@products-space/db": ["libs/backend/db/src/index.ts"],
+      "@products-space/shared-lib": ["libs/shared-lib/src/index.ts"],
+      "@products-space/use-guards": ["libs/backend/use-guards/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
